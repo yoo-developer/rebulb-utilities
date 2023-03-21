@@ -1,0 +1,47 @@
+
+body{
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins';
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+#ip_show{
+    margin-top: 10vmin;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size:4vw;
+    padding-top: 0;
+    padding: 10%;
+}
+#map{
+    position: relative;
+    color: white;
+    width: 70vw;
+    padding: 10%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10%;
+    border-radius: 10px;
+}
+#map p{
+   color: white;
+   text-transform: uppercase;
+   font-weight: bold;
+
+}
+#map img{
+    float: right;
+    width: 400px;
+    transform: translate(10% , -100%);
+    margin-bottom: -100%;
+}
+#map h1{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 0%;
+}

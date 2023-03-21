@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #121212;
+    font-family: 'Poppins';
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    position: absolute;
+    top: 7vh;
+    left: 0%;
+    background-image: url("bg.jpg");
+    background-attachment: fixed;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1{
+    color: white;
+    font-size: 10vmin;
+
+}
+#explore{
+    width: 100%;
+}
+#explore h1{
+    position: relative;
+    color: white;
+    font-size: 4vmin;
+    
+}
+#about{
+    width: 100%;
+    position: relative;
+    color: white;
+    text-transform: uppercase;
+}
+#about h1{
+    position: relative;
+    font-size: 4vmin;
+    
+}
+#about p{
+    width: 70%;
+    font-size: 2vmin;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.container{
+    width: 100%;
+    height: fit-content;
+    z-index: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+}
+
+.tool{
+    background-color: rgba(255, 255, 255, 0.2);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 60%;
+    width:300px;
+    height:350px;
+    margin:2vw;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 25px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.tool:hover{
+    transform: translate(0% , -5%);
+    background-blend-mode:lighten;
+}
+.tool p{
+    align-self:flex-start;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 2vmin;
+    width: 80%;
+}
+footer{
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 7.5vmin;
+    background-color: #020202;
+    color: white;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+}
+#section_container{
+    position: relative;
+    top: 45vh;
+}
+@media  (max-width :1024px){
+    .tool{
+        width:350px;
+    }
+}

@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <link rel="stylesheet" href="../Assets/style.css">
+        <link rel="stylesheet" href="style.css">
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <title>What Is My Public Ip & Geolocation | Rebulb</title>
+        <nav>
+            <ul onclick="window.location = 'https://lets.rebulb.online'">RE<b style="color:yellow;">BULB</b></ul>
+            <ul onclick="window.location = '../'">Other Utilities</ul>
+        </nav>
+        <div id="ip_show"></div>
+        <div id="map"></div>
+    <script type="application/javascript">
+    let ip  = ""  
+    let content = []
+    function getIP(json) {
+     ip = json.ip
+      ip_show.innerHTML = "My public IP address is: "+ ip ;
+    }
+        jQuery(document).ready(function(){
+            jQuery.get("http://ipinfo.io/"+ip, function (response)
+                       {
+                           content = "<h1>Informations :</h1><br>" + "<p> City : " + response.city + "</p><br>" + "<p> Country : " + response.country + "</p><br>" + "<p> TimeZone : " +response.timezone  + "</p><br>" + "<p> Postal Code : " + response.postal  + "</p><br>" + "<p> Service : " + response.org +"</p>" + "<img src='ip.png'>" 
+                           document.getElementById("map").innerHTML = content
+                       }, "jsonp");
+        });
+    </script>
+
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    </body>
+  </html>

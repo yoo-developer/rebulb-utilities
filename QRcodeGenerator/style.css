@@ -1,0 +1,49 @@
+:root{
+    --padding : 0.5%;
+}
+body{
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+.qr-code{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    cursor: pointer;
+    box-shadow: 0 0 20px 5px;
+}
+.container{
+margin-top: 25%;
+}
+.generate{
+    padding: var(--padding);
+    font-weight: bold;
+    color: black;
+    font-family: 'Poppins';
+}
+label{
+    color: white;
+    font-size: 3vmin;
+    padding: var(--padding);
+}
+input{
+    padding:var(--padding);
+    margin: var(--padding);
+    font-family: 'Poppins';
+    font-weight: bold;
+    
+}
+@media (max-width : 1024px){
+    .container{
+        margin-top: 40%;
+        
+    }
+    :root{
+        --padding: 2%;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Assets/style.css">
+    <title>QrCode Generator From Text or Url | Rebulb</title>
+    <nav>
+        <ul onclick="window.location = 'https://lets.rebulb.online'">RE<b style="color:yellow;">BULB</b></ul>
+        <ul onclick="window.location = '../'">Other Utilities</ul>
+    </nav>
+  <title>QR Code Generator</title>
+</head>
+<body>
+    <div class="container"></div>
+        <label class="txt" for="content">Content: </label>
+          <input type="text" size="60" maxlength="60" id="content" placeholder="Enter content" />
+          <button type="button" class="generate" id="generate">Generate</button>
+    </div><a id="download">
+          <img  onclick="document.getElementById('download').href  = document.getElementById('img_').src" class="qr-code" id="img_"/></a>   
+          <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script>
+    function htmlEncode(value) {
+      return $('<div/>').text(value)
+        .html();
+    }
+    $(function () {
+      $('#generate').click(function () {
+        let finalURL =
+'https://chart.googleapis.com/chart?cht=qr&chl=' +
+          htmlEncode($('#content').val()) +
+          '&chs=160x160&chld=L|0'
+        $('.qr-code').attr('src', finalURL);
+      });
+    });
+  </script>
+</body>
+ 
+</html>

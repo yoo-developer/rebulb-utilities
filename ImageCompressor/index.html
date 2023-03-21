@@ -1,0 +1,89 @@
+<html>
+    <body>
+        <head>
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="../Assets/style.css">
+            <title>Any Image Compressor | Rebulb</title>
+            <nav>
+                <ul onclick="window.location = 'https://lets.rebulb.online'">RE<b style="color:yellow;">BULB</b></ul>
+                <ul onclick="window.location = '../'">Other Utilities</ul>
+            </nav>
+        </head>
+    <div id="root">
+        <label for="img-input" class="input">Choose or drag  & drop a file</label>
+        <input id="img-input" type="file" accept="image/*" style="display:block" />
+        <div class="container" id="container">
+            <canvas id="canvas"></canvas>
+            <p id="message"></p>
+            
+        </div>
+        <button class="btn" id="download" onclick="download()">Download</button>
+    </div>
+    <script>
+        const MAX_WIDTH = 320;
+        const MAX_HEIGHT = 180;
+        const MIME_TYPE = "image/jpeg";
+        const QUALITY = 0.7;
+        const input = document.getElementById("img-input");
+        input.onchange = function (ev) {
+            const file = ev.target.files[0];
+            const blobURL = URL.createObjectURL(file);
+            const img = new Image();
+            img.src = blobURL;
+            img.onerror = function () {
+                URL.revokeObjectURL(this.src);
+                console.log("Cannot load image");
+            };
+            img.onload = function () {
+                URL.revokeObjectURL(this.src);
+                const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+                const canvas = document.getElementById("canvas");
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+                const ctx = canvas.getContext("2d");
+                console.log
+                ctx.drawImage(img, 0, 0, newWidth, newHeight);
+                canvas.toBlob(
+                    (blob) => {
+                        let size = readableBytes(blob.size)
+                        let average = (Math.floor(100 - (blob.size *100 /file.size)).toString() + "%")
+                        let txt  = 'File Size After Compress : ' + size.toString() + '<br>' + '<b style="color:green;font-weight:bold;">Congratulation<b> , You Save Up Around ' + average + ' Of Space'
+                        document.getElementById('message').innerHTML = txt  
+                        document.getElementById('download').style.opacity = 1
+                    },
+                    MIME_TYPE,
+                    QUALITY
+                );
+            };
+        };
+        function calculateSize(img, maxWidth, maxHeight) {
+            let width = img.width;
+            let height = img.height;
+            if (width > height) {
+                if (width > maxWidth) {
+                    height = Math.round((height * maxWidth) / width);
+                    width = maxWidth;
+                }
+            } else {
+                if (height > maxHeight) {
+                    width = Math.round((width * maxHeight) / height);
+                    height = maxHeight;
+                }
+            }
+            return [width, height];
+        }
+        function readableBytes(bytes) {
+            const i = Math.floor(Math.log(bytes) / Math.log(1024)),
+                sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+            return (bytes / Math.pow(1024, i)).toFixed(2) + ' ' + sizes[i];
+        }
+        function download(){
+            var link = document.createElement('a');
+            link.download = 'filename.png';
+            link.href = document.getElementById('canvas').toDataURL()
+            link.click();
+            }
+    </script>
+</body>
+</html>

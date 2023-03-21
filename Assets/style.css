@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+nav{
+width:100%;
+height:7vh;
+position:fixed;
+left:0%;
+top:0%;
+display:flex;
+justify-content:center;
+align-items: center;
+background:#252525;
+margin-bottom:10%;
+z-index: 999;
+}
+nav ul{
+padding-inline:5%;
+color:white;
+font-weight:bold;
+cursor: pointer;
+}
+b{
+    color: yellow;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+*{
+    scroll-behavior: smooth;
+}

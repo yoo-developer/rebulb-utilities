@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../Assets/style.css">
+        <titl>File To Base64 | Rebulb</titl>
+        <nav>
+            <ul onclick="window.location = 'https://lets.rebulb.online'">RE<b style="color:yellow;">BULB</b></ul>
+            <ul onclick="window.location = '../'">Other Utilities</ul>
+        </nav>
+    </head>
+    <body>
+        <label for="filePicker" class="file">Choose or drag & drop a file</label><br>
+        <input type="file" id="filePicker">
+    <br>
+    <div class="display">
+        <center><h1>Base64 encoded version</h1></center>
+        <textarea id="base64textarea" 
+                  placeholder="Base64 will appear here" 
+                  cols="50" rows="15" ></textarea>
+    </div>
+    <button onclick="saveTextAsFile(base64textarea.value,' Base64 | By Rebulb .txt')" class="btn">Download</button>
+<script>
+    var handleFileSelect = function(evt) {
+    var files = evt.target.files;
+    var file = files[0];
+
+    if (files && file) {
+        var reader = new FileReader();
+
+        reader.onload = function(readerEvt) {
+            var binaryString = readerEvt.target.result;
+            document.getElementById("base64textarea").value = btoa(binaryString);
+        };
+
+        reader.readAsBinaryString(file);
+    }
+};
+
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+    document.getElementById('filePicker')
+            .addEventListener('change', handleFileSelect, false);
+} else {
+    alert('The File APIs are not fully supported in this browser.');
+}
+function saveTextAsFile(textToWrite, fileNameToSaveAs)
+    {
+    	var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'}); 
+    	var downloadLink = document.createElement("a");
+    	downloadLink.download = fileNameToSaveAs;
+    	downloadLink.innerHTML = "Download File";
+    	if (window.webkitURL != null)
+    	{
+    		downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    	}
+    	else
+    	{
+    		downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+    		downloadLink.onclick = destroyClickedElement;
+    		downloadLink.style.display = "none";
+    		document.body.appendChild(downloadLink);
+    	}
+    
+    	downloadLink.click();
+    }
+</script>
+</body>
+</html>

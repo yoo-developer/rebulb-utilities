@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../Assets/style.css">
+        <title>Random Number Generator By Range | Rebulb</title>
+        <nav>
+            <ul onclick="window.location = 'https://lets.rebulb.online'">RE<b style="color:yellow;">BULB</b></ul>
+            <ul onclick="window.location = '../'">Other Utilities</ul>
+        </nav>
+        <div class="container">
+            <div class="min"><div class="txt">Min : </div><input type="number" id="min">
+            </div><div class="max" ><div class="txt">Max : </div><input type="number" id="max">
+            <div class="random_num" ><div id="random">0</div></div>
+            <button class="generate" onclick="Randomize()">Generate</button>
+        </div></div>
+        <script>
+            function Randomize() {
+                let min = Math.ceil(document.getElementById("min").value)
+                let max = Math.floor( document.getElementById("max").value)
+                
+                let random_num = document.getElementById("random")
+                
+                random_num.innerHTML= Math.floor((Math.random()) * (max - min +1) + min);
+                console.log(min , max , random_num.innerHTML)
+            }
+            
+        </script>
+    </head>
+</html>

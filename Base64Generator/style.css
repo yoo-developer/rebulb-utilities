@@ -1,0 +1,54 @@
+body{
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Poppins';
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+.file{
+    margin-top: 10%;
+    width: 80%;
+    height: 20%;
+    border: dotted 4px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.display{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#base64textarea{
+    width: 80vw;
+    height: 40vw;
+    margin: 2%;
+    resize: none;
+}
+#filePicker{
+    width: 0;
+    height: 0;
+}
+.btn{
+    padding: 15px;
+    padding-inline: 30px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    font-family: 'Poppins';
+    cursor: pointer;
+}
+@media (max-width : 1024px) {
+    .file{
+        margin-top: 40%;
+    }
+}
