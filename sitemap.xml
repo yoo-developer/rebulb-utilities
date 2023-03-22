@@ -5,17 +5,17 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://utilities.rebulb.online/</loc>
+  <loc>https://my-utilities.rebulb.online/</loc>
   <lastmod>2023-03-21T20:57:02+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://utilities.rebulb.online/Dictionarry/</loc>
+  <loc>https://my-utilities.rebulb.online/Dictionarry/</loc>
   <lastmod>2023-03-21T20:57:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://utilities.rebulb.online/IpAddress/</loc>
+  <loc>https://my-utilities.rebulb.online/IpAddress/</loc>
   <lastmod>2023-03-21T20:57:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -25,27 +25,27 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://utilities.rebulb.online/RandomNumGenerator/</loc>
+  <loc>https://my-utilities.rebulb.online/RandomNumGenerator/</loc>
   <lastmod>2023-03-21T20:57:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://utilities.rebulb.online/Base64Generator/</loc>
+  <loc>https://my-utilities.rebulb.online/Base64Generator/</loc>
   <lastmod>2023-03-21T20:57:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://utilities.rebulb.online/ColorPicker/</loc>
+  <loc>https://my-utilities.rebulb.online/ColorPicker/</loc>
   <lastmod>2023-03-21T20:57:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://utilities.rebulb.online/PasswordGenerator/</loc>
+  <loc>https://my-utilities.rebulb.online/PasswordGenerator/</loc>
   <lastmod>2023-03-21T20:57:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://utilities.rebulb.online/ImageCompressor/</loc>
+  <loc>https://my-utilities.rebulb.online/ImageCompressor/</loc>
   <lastmod>2023-03-21T20:57:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
